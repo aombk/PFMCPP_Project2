@@ -16,13 +16,14 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
+ int
+ float
+ double
+ bool
+ char
+ void
  
- 
- 
- 
- 
- 
- 
+
  
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
@@ -59,10 +60,29 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    int hours = 4;
+    int minutes = 33;
+    int gods = 12;
 
+    float roentgen = 3.6f;
+    float abrrPi = 3.142f;
+    float abbrSqr2 = 1.414f;
+    //that "f" at the end, i have seen it used before. but i dont really get it and tbh i find it a bit annoying.
+    //now that i think of it, it could be regarded as a tiny deviation from the DRY principle, right?
+
+    double sizeOfBed = 2.0;
+    double whiskey = 3;
+    double value = 0.11;
+
+    bool bypassA = true;
+    bool flatEarth = false;
+    bool climateChange = true;
+
+    char firstLetter ='A';
+    char lastLetter = 'Z';
+    char bestLetter = 'k';
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, hours, minutes, gods, roentgen, abrrPi, abbrSqr2, sizeOfBed, whiskey, value, bypassA, flatEarth, climateChange, firstLetter, lastLetter, bestLetter); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -79,43 +99,78 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+void returnNothing(float inputAnything, int somethingMore)
+{
+    ignoreUnused(inputAnything, somethingMore);
+}
 /*
  2)
  */
-
+float goGetIceCream(bool cone, int iceCreamBalls, char Flavor = 'b')
+{
+    ignoreUnused(cone, iceCreamBalls, Flavor);
+    return {};
+}
 /*
  3)
  */
-
+int countEngineFailures(bool tellTheTruth = false, int giveUpLimit = 2)
+{
+    ignoreUnused(tellTheTruth, giveUpLimit);
+    return {};
+}
 /*
  4)
  */
-
+void walk(char routeShape)
+{
+    ignoreUnused(routeShape);
+}
 /*
  5)
  */
-
+void stopTrain(bool beforeAccident = false)
+{
+    ignoreUnused(beforeAccident);
+}
 /*
  6)
  */
-
+bool findKeys(float availableTime, bool extensiveSearch = false)
+{
+    ignoreUnused(availableTime, extensiveSearch);
+    return {};
+}
 /*
  7)
  */
-
+float divideNumbers(float numberA, float numberB= 1, float numberC = 2)
+{
+    ignoreUnused(numberA, numberB, numberC);
+    return {};
+}
 /*
  8)
  */
-
+int buyApples(int number = 10, char color = 'r', float size = 2.5f)
+{
+    ignoreUnused(number, color, size);
+    return {};
+}
 /*
  9)
  */
-
+void wait(float time = 1233123451.f)
+{
+    ignoreUnused(time);
+}
 /*
  10)
  */
-
+void quit(bool saveBeforeQuitting = false)
+{
+    ignoreUnused(saveBeforeQuitting);
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -136,27 +191,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    returnNothing(4.3f, 12);
     //2)
-    
+    auto lick = goGetIceCream(true, 2);
     //3)
-    
+    auto bitterTruth = countEngineFailures();
     //4)
-    
+    walk('o');
     //5)
-    
+    stopTrain();
     //6)
-    
+    auto didYou = findKeys(600, true);
     //7)
-    
+    auto divisionResult = divideNumbers(15, 16, 12);
     //8)
-    
+    auto giveMe = buyApples(3);
     //9)
-    
+    wait(60.f);
     //10)
+    quit(true);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, lick, bitterTruth, didYou, divisionResult, giveMe);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
